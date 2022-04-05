@@ -14,8 +14,8 @@ refreshBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-const desc = document.querySelector('.inputTask');
-desc.addEventListener('keyup', (event) => {
+const descriptions = document.querySelector('.inputTask');
+descriptions.addEventListener('keyup', (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
     if (!getIsEditing()) {
