@@ -14,12 +14,13 @@ refreshBtn.addEventListener('click', () => {
   window.location.reload();
 });
 
-const desc = document.querySelector('.taskList');
+const desc = document.querySelector('.inputTask');
 desc.addEventListener('keyup', (event) => {
   if (event.keyCode === 13) {
     event.preventDefault();
-    if (!getIsEditing())addTodo();
-    else saveEdit();
+    if (!getIsEditing()) {
+      addTodo();
+    } else saveEdit();
   }
 });
 

@@ -10,7 +10,7 @@ const saveData = () => {
 
 const getStorageData = () => {
   const localFormData = JSON.parse(localStorage.getItem('todoslist'));
-  if (localFormData == null) {
+  if (localFormData === null) {
     todoList = [];
   } else {
     todoList = localFormData;
@@ -20,7 +20,7 @@ const getStorageData = () => {
 const editTodoList = (todo) => {
   isEditing = true;
   todoEdit = todo;
-  const desc = document.querySelector('.taskList');
+  const desc = document.querySelector('.inputTask');
   desc.value = todo.description;
   desc.focus();
 };
@@ -138,7 +138,7 @@ const displayToDo = () => {
 };
 
 const addTodo = () => {
-  const desc = document.querySelector('.taskList');
+  const desc = document.querySelector('.inputTask');
   if (desc.value) {
     const completed = false;
     const description = desc.value;
@@ -156,7 +156,7 @@ const addTodo = () => {
 };
 
 const saveEdit = () => {
-  const desc = document.querySelector('.taskList');
+  const desc = document.querySelector('.inputTask');
   if (desc.value) {
     todoList = todoList.map((todo) => {
       if (todo.index === todoEdit.index) {
