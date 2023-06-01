@@ -1,5 +1,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-loop-func */
+
+//Initialise todolist
 let todoList = [];
 let isEditing = false;
 let todoEdit = null;
