@@ -2,7 +2,7 @@ import './style.css';
 import {
   getStorageData, clearCompletedList, clearCheckBox, addTodo, saveEdit, displayToDo, getIsEditing,
 } from './module/addRemove.js';
-
+//Onload
 window.onload = () => {
   getStorageData();
   displayToDo();
