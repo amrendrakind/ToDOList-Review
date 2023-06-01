@@ -1,12 +1,18 @@
 import './style.css';
 import {
-  getStorageData, clearCompletedList, clearCheckBox, addTodo, saveEdit, displayToDo, getIsEditing,
+  getStorageData,
+  clearCompletedList,
+  clearCheckBox,
+  addTodo,
+  saveEdit,
+  displayToDo,
+  getIsEditing,
 } from './module/addRemove.js';
 
-window.onload = () => {
+window.addEventListener('DOMContentLoaded', () => {
   getStorageData();
   displayToDo();
-};
+});
 
 const refreshBtn = document.querySelector('.refresh-btn');
 refreshBtn.addEventListener('click', () => {
@@ -16,11 +22,13 @@ refreshBtn.addEventListener('click', () => {
 
 const descriptions = document.querySelector('.inputTask');
 descriptions.addEventListener('keyup', (event) => {
-  if (event.keyCode === 13) {
+  if (event.key === 'Enter') {
     event.preventDefault();
     if (!getIsEditing()) {
       addTodo();
-    } else saveEdit();
+    } else {
+      saveEdit();
+    }
   }
 });
 
